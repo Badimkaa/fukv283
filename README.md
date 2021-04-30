@@ -1,1 +1,1 @@
-# fukv283
+deply: https://badimkaa.github.io/fukv283/
