@@ -1,0 +1,250 @@
+/*-----config------*/
+
+html {
+    font-size: 16px;
+    line-height: 1.4;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:focus {
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+a {
+    display: inline-block;
+    background: transparent;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+}
+hr {
+    border: none;
+    min-height: 1px;
+}
+body{
+    overflow-x: hidden;
+}
+
+
+/*----------HEADER--------*/
+
+.main-wrapper {
+    margin: 0 auto;
+}
+header {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin-bottom: 50px;
+}
+* {
+    font-family: sans-serif;
+}
+.header-wrapper {
+    max-width: 1920px;
+    width: 100%;
+    padding: 0 30px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    position: relative;
+    z-index: 11;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+ul {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    list-style-type: none;
+}
+.menu-nav li {
+    transition: all .3s ease;
+}
+.menu-nav li:hover {
+    transform: scale(1.2);
+}
+
+/*----------BURGER-MENU--------*/
+.burger-menu-wrapper {
+    position: relative;
+    z-index: 11;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    display: none;
+}
+#check-menu {
+    display: none;
+}
+.burger-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.burger-line {
+    position: absolute;
+    top: 8px;
+    width: 35px;
+    height: 2px;
+    background-color: black;
+    transition: 0.5s all;
+}
+.second,
+.third {
+    top: 18px;
+}
+.fourth {
+    top: 28px;
+}
+.burger-label.active .first {
+    display: none;
+}
+.burger-label.active .second {
+    transform: rotate(45deg);
+}
+.burger-label.active .third {
+    transform: rotate(-45deg);
+}
+.burger-label.active .fourth {
+    display: none;
+}
+
+/*----------MAIN--------*/
+.main-title {
+    font-size: 2rem;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+
+/*----------ACCORDION--------*/
+.accordion {
+    width: 80%;
+    margin: 0 auto;
+}
+.tab input{
+    display: none;
+}
+.accor-text {
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.3s ease;
+}
+.tab {
+    background-color: rgb(243, 241, 241);
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.subtitle {
+    position: relative;
+    padding: 10px;
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+}
+.subtitle::after {
+    position: absolute;
+    content: '+';
+    right: 10px;
+    font-size: 20px;
+}
+.accor-text {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.accor-input:checked + .subtitle {
+    background-color:rgb(223, 224, 208);
+}
+.accor-input:checked + .subtitle::after {
+    content: '–';
+}
+.accor-input:checked ~ .accor-text {
+    max-height: 1000px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+/*----------MEDIA--------*/
+@media only screen
+and (max-width : 768px)
+and (orientation : portrait) {
+    .burger-menu-wrapper {
+        display: block;
+    }
+
+    .menu-nav{
+        position: absolute;
+        background-color: #fff;
+        width: 100vw;
+        padding-bottom: 30px;
+        box-shadow: 0 15px 10px 5px rgba(0,0,0,0.1);
+        top: -100vh;
+        left: 0;
+        z-index: 10;
+        transition: all 0.3s ease;
+    }
+    .menu-nav.active{
+        top: 100px;
+    }
+    .menu-nav ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .menu-nav li{
+        margin-top: 30px;
+    }
+    .menu-nav li:hover {
+        transform: scale(1.2);
+    }
+}
+@media only screen
+and (max-width : 400px)
+and (orientation : portrait) {
+    header {
+        height: 70px;
+    }
+    h1 {
+        font-size: 1.6em;
+    }
+    .accordion {
+        width: 90%;
+    }
+    .menu-nav.active{
+        top: 70px;
+    }
+}
