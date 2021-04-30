@@ -1,1 +1,1 @@
-deply: https://badimkaa.github.io/fukv283/
+deploy: https://badimkaa.github.io/fukv283/
